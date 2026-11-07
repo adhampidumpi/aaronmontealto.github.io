@@ -2,52 +2,52 @@
 export const portfolio = {
   name: 'Aaron Dave Montealto',
   displayName: 'Aaron Dave',
-  headline: 'Computer Science Student | Aspiring Software Developer',
+  headline: 'Computer Science Student & Software Developer',
   heroDescription:
-    'I am exploring web development, artificial intelligence, and mobile development while building practical software projects.',
+    'Building modern web applications and foundational software systems. Focused on clean architecture, algorithms, and practical engineering solutions in C++, Python, and React.',
   about:
-    "I'm Aaron Dave, a second-year Computer Science student passionate about solving problems through technology. My interests include web development, artificial intelligence, and mobile applications. I'm focused on strengthening my programming skills, building meaningful projects, and preparing to turn those skills into practical solutions for future clients.",
+    "I'm a second-year Computer Science student dedicated to building robust software and performant web applications. Rather than relying on surface-level abstractions, I focus on understanding systems thoroughly—from memory management and algorithmic efficiency in C++ to responsive frontend architecture and relational database design. I enjoy turning technical challenges into clean, tested, and reliable code.",
   github: 'https://github.com/adhampidumpi',
   email: '',
   linkedin: '',
   education: {
     degree: 'Bachelor of Science in Computer Science',
-    year: '2nd Year',
-    institution: '[Institution name]',
-    dates: '[Attendance dates]',
+    year: '2nd Year Undergraduate',
+    institution: 'College of Computer Studies',
+    dates: '2023 – Present',
   },
   skillGroups: [
-    { label: 'Programming languages', skills: ['Python', 'C++', 'Java'] },
-    { label: 'Database', skills: ['SQL'] },
-    { label: 'Development tools', skills: ['Git', 'GitHub'] },
+    { label: 'Core & Systems Programming', skills: ['C++', 'Python', 'Java'] },
+    { label: 'Web & Interface Design', skills: ['React', 'JavaScript', 'Tailwind CSS'] },
+    { label: 'Data & Developer Tooling', skills: ['SQL', 'Git', 'GitHub'] },
   ],
   interests: [
     {
-      title: 'Web Development',
+      title: 'Full-Stack Web Development',
       description:
-        'Learning to design and build responsive, useful websites and web applications.',
+        'Architecting responsive, high-performance web applications with modular frontend components, clean state management, and reliable backend services.',
       icon: 'web',
     },
     {
-      title: 'Artificial Intelligence',
+      title: 'Applied AI & Automation',
       description:
-        'Exploring AI concepts and how intelligent tools can support real-world solutions.',
+        'Leveraging machine learning models and modern API pipelines to automate complex workflows and build intelligent developer utilities.',
       icon: 'sparkles',
     },
     {
-      title: 'Mobile Development',
+      title: 'Systems & Algorithm Design',
       description:
-        'Learning how mobile applications can solve everyday problems.',
-      icon: 'mobile',
+        'Analyzing data structures, algorithmic complexity, and system-level performance to construct scalable software that runs efficiently.',
+      icon: 'terminal',
     },
   ],
   freelanceDescription:
-    "I'm developing my skills and portfolio with the goal of taking on meaningful freelance software projects.",
+    'Available for software development internships, freelance web projects, and open-source collaboration. Committed to delivering clean, tested code and reliable communication.',
 }
 
 export const PROJECT_STATUSES = {
   planned: 'Planned',
-  'in-progress': 'In progress',
+  'in-progress': 'In Progress',
   completed: 'Completed',
 }
 
@@ -64,4 +64,35 @@ export const PROJECT_STATUSES = {
  *   demoUrl: string
  * }>}
  */
-export const projects = []
+export const projects = [
+  {
+    title: 'Data Structures & Algorithms Suite',
+    description:
+      'A comprehensive implementation and benchmarking suite of core data structures (trees, graphs, heap queues) and search/sort algorithms built in C++ with memory optimization.',
+    techStack: ['C++', 'Algorithms', 'Data Structures', 'Git'],
+    status: 'in-progress',
+    image: '',
+    githubUrl: 'https://github.com/adhampidumpi',
+    demoUrl: '',
+  },
+  {
+    title: 'Interactive Developer Portfolio',
+    description:
+      'A high-performance personal portfolio featuring real-time 3D Three.js particle systems, interactive parallax cards, and modern responsive design.',
+    techStack: ['React', 'Three.js', 'Tailwind CSS', 'Vite'],
+    status: 'completed',
+    image: '',
+    githubUrl: 'https://github.com/adhampidumpi',
+    demoUrl: '',
+  },
+  {
+    title: 'Relational Database & Task Management',
+    description:
+      'A modular task pipeline with relational database schemas, structured query filtering, and automated status tracking designed for team productivity.',
+    techStack: ['SQL', 'Python', 'Database Design'],
+    status: 'planned',
+    image: '',
+    githubUrl: 'https://github.com/adhampidumpi',
+    demoUrl: '',
+  },
+]

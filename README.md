@@ -22,7 +22,7 @@ Personal information, skill groups, interests, education, and project records li
 - Keep skill claims and freelance availability accurate as your experience grows.
 - The GitHub profile is `https://github.com/adhampidumpi`.
 
-Add your own portrait at `public/images/aaron-3d.png`. The site has a monogram placeholder when the image is unavailable; it does not use an invented portrait.
+To replace the portrait, add your image at `public/images/aaron-pro.jpg`. The site has a monogram placeholder when the image is unavailable.
 
 After adding the portrait, reload the page. If changing the name or positioning, also update the page title and description in `index.html`.
 

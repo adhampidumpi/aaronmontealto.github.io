@@ -6,42 +6,12 @@ const baseUrl = (import.meta.env?.BASE_URL || '/').endsWith('/')
   ? import.meta.env?.BASE_URL || '/'
   : `${import.meta.env?.BASE_URL}/`
 
-const PORTRAIT_VARIANTS = [
-  {
-    id: '3d',
-    label: '3D Avatar',
-    badge: '3D CYBER EDITION',
-    src: `${baseUrl}images/aaron-3d.jpg`,
-    tagline: 'Rendered with modern tech aesthetics',
-  },
-  {
-    id: 'pro',
-    label: 'Studio Pro',
-    badge: 'PROFESSIONAL SUITE',
-    src: `${baseUrl}images/aaron-pro.jpg`,
-    tagline: 'Polished studio lighting & executive attire',
-  },
-  {
-    id: 'original',
-    label: 'Original',
-    badge: 'AUTHENTIC SHOT',
-    src: `${baseUrl}images/aaron-original.jpg`,
-    tagline: 'Raw student portrait',
-  },
-]
+const portraitSrc = `${baseUrl}images/aaron-pro.jpg`
 
 export default function Portrait3D() {
-  const [activeVariant, setActiveVariant] = useState('3d')
   const [tilt, setTilt] = useState({ rx: 0, ry: 0, gx: 50, gy: 50, isHovered: false })
   const [imageFailed, setImageFailed] = useState(false)
   const cardRef = useRef(null)
-
-  const currentVariant = PORTRAIT_VARIANTS.find((v) => v.id === activeVariant) || PORTRAIT_VARIANTS[0]
-
-  const handleVariantSelect = (variantId) => {
-    setImageFailed(false)
-    setActiveVariant(variantId)
-  }
 
   const handlePointerMove = (e) => {
     const card = cardRef.current
@@ -102,7 +72,7 @@ export default function Portrait3D() {
             <span className="node-pulse" />
             LIVE 3D CARD
           </span>
-          <span className="header-edition">{currentVariant.badge}</span>
+          <span className="header-edition">PROFESSIONAL SUITE</span>
           <Icon name="sparkles" size={14} className="header-sparkle" />
         </div>
 
@@ -116,13 +86,12 @@ export default function Portrait3D() {
           {imageFailed ? (
             <div className="portrait-3d-placeholder" role="img" aria-label="AD initials, portrait placeholder">
               <span className="portrait-initials">ad<span>.</span></span>
-              <span className="portrait-label">{currentVariant.label.toUpperCase()}</span>
+              <span className="portrait-label">STUDIO PRO</span>
             </div>
           ) : (
             <img
-              key={currentVariant.src}
               className="portrait-3d-image"
-              src={currentVariant.src}
+              src={portraitSrc}
               alt={`Professional portrait of ${portfolio.displayName}`}
               width="600"
               height="600"
@@ -156,26 +125,6 @@ export default function Portrait3D() {
         </div>
       </div>
 
-      {/* Style Switcher Controls */}
-      <div className="portrait-variant-controls" aria-label="Portrait style selector">
-        <span className="variant-label">SELECT STYLE:</span>
-        <div className="variant-buttons">
-          {PORTRAIT_VARIANTS.map((variant) => (
-            <button
-              key={variant.id}
-              type="button"
-              className={`variant-btn ${activeVariant === variant.id ? 'is-active' : ''}`}
-              onClick={() => handleVariantSelect(variant.id)}
-              aria-pressed={activeVariant === variant.id}
-            >
-              {variant.id === '3d' && <Icon name="sparkles" size={13} />}
-              {variant.id === 'pro' && <Icon name="user" size={13} />}
-              {variant.id === 'original' && <Icon name="terminal" size={13} />}
-              <span>{variant.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
     </div>
   )
 }

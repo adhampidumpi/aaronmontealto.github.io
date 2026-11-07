@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.npm-cache/
+.qa/
+.sites-runtime/
+.sites-checkout/
+.sites-checkout-*/
+outputs/
+*.local
+*.log
+.DS_Store

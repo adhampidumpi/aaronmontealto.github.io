@@ -13,7 +13,7 @@ export const portfolio = {
   education: {
     degree: 'Bachelor of Science in Computer Science',
     year: '2nd Year Undergraduate',
-    institution: 'College of Computer Studies',
+    institution: 'Batangas State University',
     dates: '2023 – Present',
   },
   skillGroups: [

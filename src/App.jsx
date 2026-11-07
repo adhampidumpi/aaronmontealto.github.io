@@ -404,10 +404,18 @@ function Contact() {
         >
           <Icon name="github" size={19} /> Connect on GitHub <Icon name="arrow-up-right" size={18} />
         </ExternalLink>
+        {githubHandle && <span className="contact-handle">@{githubHandle}</span>}
         {validEmail && (
-          <a className="button button-secondary" href={`mailto:${email}`}>
-            <Icon name="mail" size={18} /> Email me
-          </a>
+          <>
+            <ExternalLink
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`}
+              className="button button-primary"
+              label="Connect on Gmail"
+            >
+              <Icon name="mail" size={19} /> Connect on Gmail <Icon name="arrow-up-right" size={18} />
+            </ExternalLink>
+            <span className="contact-handle">{email}</span>
+          </>
         )}
         {validLinkedIn && (
           <ExternalLink
@@ -418,7 +426,6 @@ function Contact() {
             <Icon name="linkedin" size={18} /> LinkedIn
           </ExternalLink>
         )}
-        {githubHandle && <span className="contact-handle">@{githubHandle}</span>}
       </div>
     </section>
   )

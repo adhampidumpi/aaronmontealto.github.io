@@ -8,7 +8,7 @@ export const portfolio = {
   about:
     "I'm a second-year Computer Science student dedicated to building robust software and performant web applications. Rather than relying on surface-level abstractions, I focus on understanding systems thoroughly—from memory management and algorithmic efficiency in C++ to responsive frontend architecture and relational database design. I enjoy turning technical challenges into clean, tested, and reliable code.",
   github: 'https://github.com/adhampidumpi',
-  email: '',
+  email: 'adhampidumpi@gmail.com',
   linkedin: '',
   education: {
     degree: 'Bachelor of Science in Computer Science',

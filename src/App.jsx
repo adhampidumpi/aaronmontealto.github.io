@@ -376,6 +376,13 @@ function Contact() {
     /* Unprovided contact details stay hidden. */
   }
 
+  let githubHandle = ''
+  try {
+    githubHandle = new URL(portfolio.github).pathname.split('/').filter(Boolean)[0] || ''
+  } catch {
+    /* Invalid GitHub URL */
+  }
+
   return (
     <section className="section contact-section" id="contact" aria-labelledby="contact-title">
       <div>
@@ -411,9 +418,7 @@ function Contact() {
             <Icon name="linkedin" size={18} /> LinkedIn
           </ExternalLink>
         )}
-        <span className="contact-handle">
-          @{new URL(portfolio.github).pathname.split('/').filter(Boolean)[0]}
-        </span>
+        {githubHandle && <span className="contact-handle">@{githubHandle}</span>}
       </div>
     </section>
   )

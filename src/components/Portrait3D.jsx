@@ -2,26 +2,30 @@ import { useState, useRef } from 'react'
 import Icon from './Icon'
 import { portfolio } from '../data/portfolio'
 
+const baseUrl = (import.meta.env?.BASE_URL || '/').endsWith('/')
+  ? import.meta.env?.BASE_URL || '/'
+  : `${import.meta.env?.BASE_URL}/`
+
 const PORTRAIT_VARIANTS = [
   {
     id: '3d',
     label: '3D Avatar',
     badge: '3D CYBER EDITION',
-    src: '/images/aaron-3d.jpg',
+    src: `${baseUrl}images/aaron-3d.jpg`,
     tagline: 'Rendered with modern tech aesthetics',
   },
   {
     id: 'pro',
     label: 'Studio Pro',
     badge: 'PROFESSIONAL SUITE',
-    src: '/images/aaron-pro.jpg',
+    src: `${baseUrl}images/aaron-pro.jpg`,
     tagline: 'Polished studio lighting & executive attire',
   },
   {
     id: 'original',
     label: 'Original',
     badge: 'AUTHENTIC SHOT',
-    src: '/images/aaron-original.jpg',
+    src: `${baseUrl}images/aaron-original.jpg`,
     tagline: 'Raw student portrait',
   },
 ]
@@ -29,14 +33,12 @@ const PORTRAIT_VARIANTS = [
 export default function Portrait3D() {
   const [activeVariant, setActiveVariant] = useState('3d')
   const [tilt, setTilt] = useState({ rx: 0, ry: 0, gx: 50, gy: 50, isHovered: false })
-  const [imageLoaded, setImageLoaded] = useState(false)
   const [imageFailed, setImageFailed] = useState(false)
   const cardRef = useRef(null)
 
   const currentVariant = PORTRAIT_VARIANTS.find((v) => v.id === activeVariant) || PORTRAIT_VARIANTS[0]
 
   const handleVariantSelect = (variantId) => {
-    setImageLoaded(false)
     setImageFailed(false)
     setActiveVariant(variantId)
   }
@@ -119,12 +121,11 @@ export default function Portrait3D() {
           ) : (
             <img
               key={currentVariant.src}
-              className={`portrait-3d-image ${imageLoaded ? 'is-visible' : 'is-loading'}`}
+              className="portrait-3d-image"
               src={currentVariant.src}
               alt={`Professional portrait of ${portfolio.displayName}`}
               width="600"
               height="600"
-              onLoad={() => setImageLoaded(true)}
               onError={() => setImageFailed(true)}
             />
           )}

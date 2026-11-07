@@ -266,19 +266,46 @@ h1 > span:not(.name-period) { color: var(--accent); }
   height: 100%;
   object-fit: cover;
   transform: translateZ(35px) scale(0.96);
-  transition: opacity 0.4s ease, transform 0.3s ease;
+  transition: transform 0.3s ease;
   z-index: 5;
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
   border-radius: 12px;
 }
 
-.portrait-3d-image.is-loading {
-  opacity: 0;
-  transform: translateZ(20px) scale(0.9);
+.portrait-3d-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-image: linear-gradient(rgba(187, 165, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(187, 165, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-.portrait-3d-image.is-visible {
-  opacity: 1;
+.portrait-initials {
+  font-size: 110px;
+  letter-spacing: -10px;
+  color: #cbb4ed;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(-6deg);
+  z-index: 1;
+  text-shadow: 0 0 35px rgba(187, 165, 255, 0.3);
+}
+
+.portrait-initials > span {
+  color: var(--accent);
+}
+
+.portrait-label {
+  position: absolute;
+  bottom: 24px;
+  font-family: ui-monospace, monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #b9aac9;
 }
 
 .floating-3d-pill {

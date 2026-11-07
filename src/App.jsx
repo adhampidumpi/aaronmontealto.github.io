@@ -376,13 +376,6 @@ function Contact() {
     /* Unprovided contact details stay hidden. */
   }
 
-  let githubHandle = ''
-  try {
-    githubHandle = new URL(portfolio.github).pathname.split('/').filter(Boolean)[0] || ''
-  } catch {
-    /* Invalid GitHub URL */
-  }
-
   return (
     <section className="section contact-section" id="contact" aria-labelledby="contact-title">
       <div>
@@ -404,18 +397,14 @@ function Contact() {
         >
           <Icon name="github" size={19} /> Connect on GitHub <Icon name="arrow-up-right" size={18} />
         </ExternalLink>
-        {githubHandle && <span className="contact-handle">@{githubHandle}</span>}
         {validEmail && (
-          <>
-            <ExternalLink
-              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`}
-              className="button button-primary"
-              label="Connect on Gmail"
-            >
-              <Icon name="mail" size={19} /> Connect on Gmail <Icon name="arrow-up-right" size={18} />
-            </ExternalLink>
-            <span className="contact-handle">{email}</span>
-          </>
+          <ExternalLink
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`}
+            className="button button-primary"
+            label="Connect on Gmail"
+          >
+            <Icon name="mail" size={19} /> Connect on Gmail <Icon name="arrow-up-right" size={18} />
+          </ExternalLink>
         )}
         {validLinkedIn && (
           <ExternalLink

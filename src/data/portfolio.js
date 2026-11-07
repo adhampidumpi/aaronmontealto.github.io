@@ -1,7 +1,7 @@
 // Edit your public information here. Leave unprovided contact details empty.
 export const portfolio = {
   name: 'Aaron Dave Montealto',
-  displayName: 'Aaron Dave',
+  displayName: 'Aaron Dave Montealto',
   headline: 'Computer Science Student & Software Developer',
   heroDescription:
     'Building modern web applications and foundational software systems. Focused on clean architecture, algorithms, and practical engineering solutions in C++, Python, and React.',

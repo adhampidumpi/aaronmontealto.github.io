@@ -66,3 +66,7 @@ In Chrome, open DevTools with F12 and toggle the device toolbar with Ctrl+Shift+
 The lint dependencies use a scoped `minimatch` override to avoid [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249). Build and lint must pass when updating this override; remove it when upstream ESLint dependencies include a patched version.
 
 Hosting configuration is stored in `.openai/hosting.json`. The Sites publishing workflow synchronizes the source and deploys the production files from `dist/`. Local caches and temporary verification files are excluded from source control.
+
+## GitHub Pages
+
+The `.github/workflows/deploy.yml` workflow builds and publishes the portfolio whenever `main` is updated. In the repository's **Settings → Pages**, select **GitHub Actions** as the build and deployment source. When the workflow completes, GitHub shows the public site URL in the Pages settings and deployment details.
